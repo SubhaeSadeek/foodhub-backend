@@ -18,5 +18,5 @@ export function errorHandler(
 	}
 
 	res.status(responseCode);
-	res.json({ success: false, meeage: errorText, error: detailsError });
+	res.json({ success: false, message: errorText, error: detailsError });
 }
