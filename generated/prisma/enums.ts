@@ -26,6 +26,23 @@ export const Status = {
 export type Status = (typeof Status)[keyof typeof Status]
 
 
+export const Categories = {
+  BERGUR_FASTFOOD: 'BERGUR_FASTFOOD',
+  PIZZA_ITALIAN: 'PIZZA_ITALIAN',
+  LOCAL_CLASSIC: 'LOCAL_CLASSIC',
+  TRADITIONAL: 'TRADITIONAL',
+  MUGHLAI: 'MUGHLAI',
+  INDIAN: 'INDIAN',
+  ASIAN_CHINESE: 'ASIAN_CHINESE',
+  MIDDLE_EASTERN: 'MIDDLE_EASTERN',
+  MEDITERRANIAN: 'MEDITERRANIAN',
+  CONTINENTAL: 'CONTINENTAL',
+  THAI: 'THAI'
+} as const
+
+export type Categories = (typeof Categories)[keyof typeof Categories]
+
+
 export const OrderStatus = {
   PREPARING: 'PREPARING',
   READY: 'READY',

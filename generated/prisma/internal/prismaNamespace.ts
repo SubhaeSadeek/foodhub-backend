@@ -997,7 +997,7 @@ export type ProviderProfileScalarFieldEnum = (typeof ProviderProfileScalarFieldE
 
 export const CategoryScalarFieldEnum = {
   id: 'id',
-  name: 'name',
+  category: 'category',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
@@ -1143,6 +1143,20 @@ export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel
  * Reference to a field of type 'DateTime[]'
  */
 export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Categories'
+ */
+export type EnumCategoriesFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Categories'>
+    
+
+
+/**
+ * Reference to a field of type 'Categories[]'
+ */
+export type ListEnumCategoriesFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Categories[]'>
     
 
 

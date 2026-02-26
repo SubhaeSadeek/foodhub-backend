@@ -16,11 +16,7 @@ const createCategory = async (
 			data: result,
 		});
 	} catch (err: any) {
-		sendResponse(res, {
-			code: 500,
-			success: false,
-			message: err.message,
-		});
+		next(err);
 	}
 };
 

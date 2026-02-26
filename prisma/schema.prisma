@@ -18,6 +18,20 @@ enum Status {
   SUSPENDED
 }
 
+enum Categories {
+  BERGUR_FASTFOOD
+  PIZZA_ITALIAN
+  LOCAL_CLASSIC
+  TRADITIONAL
+  MUGHLAI
+  INDIAN
+  ASIAN_CHINESE
+  MIDDLE_EASTERN
+  MEDITERRANIAN
+  CONTINENTAL
+  THAI
+}
+
 enum OrderStatus {
   PREPARING
   READY
@@ -71,8 +85,8 @@ model ProviderProfile {
 }
 
 model Category {
-  id   String @id @default(uuid())
-  name String @unique
+  id       String     @id @default(uuid())
+  category Categories
 
   meals Meal[]
 
@@ -94,7 +108,7 @@ model Meal {
   categoryId        String
 
   provider ProviderProfile @relation(fields: [providerId], references: [id], onDelete: Cascade)
-  category Category        @relation(fields: [categoryId], references: [id])
+  category Category?       @relation(fields: [categoryId], references: [id])
 
   orderItems OrderItem[]
   reviews    Review[]
