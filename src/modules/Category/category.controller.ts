@@ -10,7 +10,7 @@ const createCategory = async (
 	try {
 		const result = await CategoryService.createCategoryIntoDB(req.body);
 		sendResponse(res, {
-			code: 200,
+			code: 201,
 			success: true,
 			message: "Congratulations! Meal Category created successfully",
 			data: result,

@@ -10,7 +10,7 @@ const createProviderPrifile = async (
 	try {
 		const result = await ProviderService.createProviderProfileIntoDB(req.body);
 		sendResponse(res, {
-			code: 200,
+			code: 201,
 			success: true,
 			message: "Congratulations! Provider Profile created successfully",
 			data: result,
