@@ -19,11 +19,20 @@ enum Status {
 }
 
 enum OrderStatus {
-  PENDING
-  CONFIRMED
   PREPARING
+  READY
   DELIVERED
   CANCELLED
+}
+
+enum DietryPreference {
+  VEGAN
+  VEGETARIAN
+  KETO
+  GLUTENFREE
+  DIARYFREE
+  HALAL
+  KOSHER
 }
 
 model User {
@@ -62,8 +71,9 @@ model ProviderProfile {
 }
 
 model Category {
-  id    String @id @default(uuid())
-  name  String @unique
+  id   String @id @default(uuid())
+  name String @unique
+
   meals Meal[]
 
   createdAt DateTime @default(now())
@@ -73,15 +83,15 @@ model Category {
 }
 
 model Meal {
-  id          String  @id @default(uuid())
-  name        String
-  description String?
-  price       Decimal @db.Decimal(6, 2)
-  imageUrl    String?
-  isAvailable Boolean @default(true)
-
-  providerId String
-  categoryId String
+  id                String            @id @default(uuid())
+  name              String
+  description       String?
+  price             Decimal           @db.Decimal(6, 2)
+  imageUrl          String?
+  isAvailable       Boolean           @default(true)
+  dietry_preference DietryPreference?
+  providerId        String
+  categoryId        String
 
   provider ProviderProfile @relation(fields: [providerId], references: [id], onDelete: Cascade)
   category Category        @relation(fields: [categoryId], references: [id])
@@ -101,7 +111,7 @@ model Order {
   providerId      String
   totalAmount     Float
   deliveryAddress String
-  status          OrderStatus @default(PENDING)
+  status          OrderStatus @default(PREPARING)
 
   customer User            @relation(fields: [customerId], references: [id])
   provider ProviderProfile @relation(fields: [providerId], references: [id])

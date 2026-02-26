@@ -1012,6 +1012,7 @@ export const MealScalarFieldEnum = {
   price: 'price',
   imageUrl: 'imageUrl',
   isAvailable: 'isAvailable',
+  dietry_preference: 'dietry_preference',
   providerId: 'providerId',
   categoryId: 'categoryId',
   createdAt: 'createdAt',
@@ -1163,6 +1164,20 @@ export type ListDecimalFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaMo
  * Reference to a field of type 'Boolean'
  */
 export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+    
+
+
+/**
+ * Reference to a field of type 'DietryPreference'
+ */
+export type EnumDietryPreferenceFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DietryPreference'>
+    
+
+
+/**
+ * Reference to a field of type 'DietryPreference[]'
+ */
+export type ListEnumDietryPreferenceFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DietryPreference[]'>
     
 
 

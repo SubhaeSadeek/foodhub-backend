@@ -41,6 +41,7 @@ export type MealMinAggregateOutputType = {
   price: runtime.Decimal | null
   imageUrl: string | null
   isAvailable: boolean | null
+  dietry_preference: $Enums.DietryPreference | null
   providerId: string | null
   categoryId: string | null
   createdAt: Date | null
@@ -54,6 +55,7 @@ export type MealMaxAggregateOutputType = {
   price: runtime.Decimal | null
   imageUrl: string | null
   isAvailable: boolean | null
+  dietry_preference: $Enums.DietryPreference | null
   providerId: string | null
   categoryId: string | null
   createdAt: Date | null
@@ -67,6 +69,7 @@ export type MealCountAggregateOutputType = {
   price: number
   imageUrl: number
   isAvailable: number
+  dietry_preference: number
   providerId: number
   categoryId: number
   createdAt: number
@@ -90,6 +93,7 @@ export type MealMinAggregateInputType = {
   price?: true
   imageUrl?: true
   isAvailable?: true
+  dietry_preference?: true
   providerId?: true
   categoryId?: true
   createdAt?: true
@@ -103,6 +107,7 @@ export type MealMaxAggregateInputType = {
   price?: true
   imageUrl?: true
   isAvailable?: true
+  dietry_preference?: true
   providerId?: true
   categoryId?: true
   createdAt?: true
@@ -116,6 +121,7 @@ export type MealCountAggregateInputType = {
   price?: true
   imageUrl?: true
   isAvailable?: true
+  dietry_preference?: true
   providerId?: true
   categoryId?: true
   createdAt?: true
@@ -216,6 +222,7 @@ export type MealGroupByOutputType = {
   price: runtime.Decimal
   imageUrl: string | null
   isAvailable: boolean
+  dietry_preference: $Enums.DietryPreference | null
   providerId: string
   categoryId: string
   createdAt: Date
@@ -252,6 +259,7 @@ export type MealWhereInput = {
   price?: Prisma.DecimalFilter<"Meal"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: Prisma.StringNullableFilter<"Meal"> | string | null
   isAvailable?: Prisma.BoolFilter<"Meal"> | boolean
+  dietry_preference?: Prisma.EnumDietryPreferenceNullableFilter<"Meal"> | $Enums.DietryPreference | null
   providerId?: Prisma.StringFilter<"Meal"> | string
   categoryId?: Prisma.StringFilter<"Meal"> | string
   createdAt?: Prisma.DateTimeFilter<"Meal"> | Date | string
@@ -269,6 +277,7 @@ export type MealOrderByWithRelationInput = {
   price?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   isAvailable?: Prisma.SortOrder
+  dietry_preference?: Prisma.SortOrderInput | Prisma.SortOrder
   providerId?: Prisma.SortOrder
   categoryId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -289,6 +298,7 @@ export type MealWhereUniqueInput = Prisma.AtLeast<{
   price?: Prisma.DecimalFilter<"Meal"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: Prisma.StringNullableFilter<"Meal"> | string | null
   isAvailable?: Prisma.BoolFilter<"Meal"> | boolean
+  dietry_preference?: Prisma.EnumDietryPreferenceNullableFilter<"Meal"> | $Enums.DietryPreference | null
   providerId?: Prisma.StringFilter<"Meal"> | string
   categoryId?: Prisma.StringFilter<"Meal"> | string
   createdAt?: Prisma.DateTimeFilter<"Meal"> | Date | string
@@ -306,6 +316,7 @@ export type MealOrderByWithAggregationInput = {
   price?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   isAvailable?: Prisma.SortOrder
+  dietry_preference?: Prisma.SortOrderInput | Prisma.SortOrder
   providerId?: Prisma.SortOrder
   categoryId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -327,6 +338,7 @@ export type MealScalarWhereWithAggregatesInput = {
   price?: Prisma.DecimalWithAggregatesFilter<"Meal"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: Prisma.StringNullableWithAggregatesFilter<"Meal"> | string | null
   isAvailable?: Prisma.BoolWithAggregatesFilter<"Meal"> | boolean
+  dietry_preference?: Prisma.EnumDietryPreferenceNullableWithAggregatesFilter<"Meal"> | $Enums.DietryPreference | null
   providerId?: Prisma.StringWithAggregatesFilter<"Meal"> | string
   categoryId?: Prisma.StringWithAggregatesFilter<"Meal"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Meal"> | Date | string
@@ -340,6 +352,7 @@ export type MealCreateInput = {
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: string | null
   isAvailable?: boolean
+  dietry_preference?: $Enums.DietryPreference | null
   createdAt?: Date | string
   updatedAt?: Date | string
   provider: Prisma.ProviderProfileCreateNestedOneWithoutMealsInput
@@ -355,6 +368,7 @@ export type MealUncheckedCreateInput = {
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: string | null
   isAvailable?: boolean
+  dietry_preference?: $Enums.DietryPreference | null
   providerId: string
   categoryId: string
   createdAt?: Date | string
@@ -370,6 +384,7 @@ export type MealUpdateInput = {
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  dietry_preference?: Prisma.NullableEnumDietryPreferenceFieldUpdateOperationsInput | $Enums.DietryPreference | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   provider?: Prisma.ProviderProfileUpdateOneRequiredWithoutMealsNestedInput
@@ -385,6 +400,7 @@ export type MealUncheckedUpdateInput = {
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  dietry_preference?: Prisma.NullableEnumDietryPreferenceFieldUpdateOperationsInput | $Enums.DietryPreference | null
   providerId?: Prisma.StringFieldUpdateOperationsInput | string
   categoryId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -400,6 +416,7 @@ export type MealCreateManyInput = {
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: string | null
   isAvailable?: boolean
+  dietry_preference?: $Enums.DietryPreference | null
   providerId: string
   categoryId: string
   createdAt?: Date | string
@@ -413,6 +430,7 @@ export type MealUpdateManyMutationInput = {
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  dietry_preference?: Prisma.NullableEnumDietryPreferenceFieldUpdateOperationsInput | $Enums.DietryPreference | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -424,6 +442,7 @@ export type MealUncheckedUpdateManyInput = {
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  dietry_preference?: Prisma.NullableEnumDietryPreferenceFieldUpdateOperationsInput | $Enums.DietryPreference | null
   providerId?: Prisma.StringFieldUpdateOperationsInput | string
   categoryId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -447,6 +466,7 @@ export type MealCountOrderByAggregateInput = {
   price?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   isAvailable?: Prisma.SortOrder
+  dietry_preference?: Prisma.SortOrder
   providerId?: Prisma.SortOrder
   categoryId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -464,6 +484,7 @@ export type MealMaxOrderByAggregateInput = {
   price?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   isAvailable?: Prisma.SortOrder
+  dietry_preference?: Prisma.SortOrder
   providerId?: Prisma.SortOrder
   categoryId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -477,6 +498,7 @@ export type MealMinOrderByAggregateInput = {
   price?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   isAvailable?: Prisma.SortOrder
+  dietry_preference?: Prisma.SortOrder
   providerId?: Prisma.SortOrder
   categoryId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -588,6 +610,10 @@ export type BoolFieldUpdateOperationsInput = {
   set?: boolean
 }
 
+export type NullableEnumDietryPreferenceFieldUpdateOperationsInput = {
+  set?: $Enums.DietryPreference | null
+}
+
 export type MealCreateNestedOneWithoutOrderItemsInput = {
   create?: Prisma.XOR<Prisma.MealCreateWithoutOrderItemsInput, Prisma.MealUncheckedCreateWithoutOrderItemsInput>
   connectOrCreate?: Prisma.MealCreateOrConnectWithoutOrderItemsInput
@@ -623,6 +649,7 @@ export type MealCreateWithoutProviderInput = {
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: string | null
   isAvailable?: boolean
+  dietry_preference?: $Enums.DietryPreference | null
   createdAt?: Date | string
   updatedAt?: Date | string
   category: Prisma.CategoryCreateNestedOneWithoutMealsInput
@@ -637,6 +664,7 @@ export type MealUncheckedCreateWithoutProviderInput = {
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: string | null
   isAvailable?: boolean
+  dietry_preference?: $Enums.DietryPreference | null
   categoryId: string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -680,6 +708,7 @@ export type MealScalarWhereInput = {
   price?: Prisma.DecimalFilter<"Meal"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: Prisma.StringNullableFilter<"Meal"> | string | null
   isAvailable?: Prisma.BoolFilter<"Meal"> | boolean
+  dietry_preference?: Prisma.EnumDietryPreferenceNullableFilter<"Meal"> | $Enums.DietryPreference | null
   providerId?: Prisma.StringFilter<"Meal"> | string
   categoryId?: Prisma.StringFilter<"Meal"> | string
   createdAt?: Prisma.DateTimeFilter<"Meal"> | Date | string
@@ -693,6 +722,7 @@ export type MealCreateWithoutCategoryInput = {
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: string | null
   isAvailable?: boolean
+  dietry_preference?: $Enums.DietryPreference | null
   createdAt?: Date | string
   updatedAt?: Date | string
   provider: Prisma.ProviderProfileCreateNestedOneWithoutMealsInput
@@ -707,6 +737,7 @@ export type MealUncheckedCreateWithoutCategoryInput = {
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: string | null
   isAvailable?: boolean
+  dietry_preference?: $Enums.DietryPreference | null
   providerId: string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -747,6 +778,7 @@ export type MealCreateWithoutOrderItemsInput = {
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: string | null
   isAvailable?: boolean
+  dietry_preference?: $Enums.DietryPreference | null
   createdAt?: Date | string
   updatedAt?: Date | string
   provider: Prisma.ProviderProfileCreateNestedOneWithoutMealsInput
@@ -761,6 +793,7 @@ export type MealUncheckedCreateWithoutOrderItemsInput = {
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: string | null
   isAvailable?: boolean
+  dietry_preference?: $Enums.DietryPreference | null
   providerId: string
   categoryId: string
   createdAt?: Date | string
@@ -791,6 +824,7 @@ export type MealUpdateWithoutOrderItemsInput = {
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  dietry_preference?: Prisma.NullableEnumDietryPreferenceFieldUpdateOperationsInput | $Enums.DietryPreference | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   provider?: Prisma.ProviderProfileUpdateOneRequiredWithoutMealsNestedInput
@@ -805,6 +839,7 @@ export type MealUncheckedUpdateWithoutOrderItemsInput = {
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  dietry_preference?: Prisma.NullableEnumDietryPreferenceFieldUpdateOperationsInput | $Enums.DietryPreference | null
   providerId?: Prisma.StringFieldUpdateOperationsInput | string
   categoryId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -819,6 +854,7 @@ export type MealCreateWithoutReviewsInput = {
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: string | null
   isAvailable?: boolean
+  dietry_preference?: $Enums.DietryPreference | null
   createdAt?: Date | string
   updatedAt?: Date | string
   provider: Prisma.ProviderProfileCreateNestedOneWithoutMealsInput
@@ -833,6 +869,7 @@ export type MealUncheckedCreateWithoutReviewsInput = {
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: string | null
   isAvailable?: boolean
+  dietry_preference?: $Enums.DietryPreference | null
   providerId: string
   categoryId: string
   createdAt?: Date | string
@@ -863,6 +900,7 @@ export type MealUpdateWithoutReviewsInput = {
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  dietry_preference?: Prisma.NullableEnumDietryPreferenceFieldUpdateOperationsInput | $Enums.DietryPreference | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   provider?: Prisma.ProviderProfileUpdateOneRequiredWithoutMealsNestedInput
@@ -877,6 +915,7 @@ export type MealUncheckedUpdateWithoutReviewsInput = {
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  dietry_preference?: Prisma.NullableEnumDietryPreferenceFieldUpdateOperationsInput | $Enums.DietryPreference | null
   providerId?: Prisma.StringFieldUpdateOperationsInput | string
   categoryId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -891,6 +930,7 @@ export type MealCreateManyProviderInput = {
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: string | null
   isAvailable?: boolean
+  dietry_preference?: $Enums.DietryPreference | null
   categoryId: string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -903,6 +943,7 @@ export type MealUpdateWithoutProviderInput = {
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  dietry_preference?: Prisma.NullableEnumDietryPreferenceFieldUpdateOperationsInput | $Enums.DietryPreference | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   category?: Prisma.CategoryUpdateOneRequiredWithoutMealsNestedInput
@@ -917,6 +958,7 @@ export type MealUncheckedUpdateWithoutProviderInput = {
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  dietry_preference?: Prisma.NullableEnumDietryPreferenceFieldUpdateOperationsInput | $Enums.DietryPreference | null
   categoryId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -931,6 +973,7 @@ export type MealUncheckedUpdateManyWithoutProviderInput = {
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  dietry_preference?: Prisma.NullableEnumDietryPreferenceFieldUpdateOperationsInput | $Enums.DietryPreference | null
   categoryId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -943,6 +986,7 @@ export type MealCreateManyCategoryInput = {
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: string | null
   isAvailable?: boolean
+  dietry_preference?: $Enums.DietryPreference | null
   providerId: string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -955,6 +999,7 @@ export type MealUpdateWithoutCategoryInput = {
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  dietry_preference?: Prisma.NullableEnumDietryPreferenceFieldUpdateOperationsInput | $Enums.DietryPreference | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   provider?: Prisma.ProviderProfileUpdateOneRequiredWithoutMealsNestedInput
@@ -969,6 +1014,7 @@ export type MealUncheckedUpdateWithoutCategoryInput = {
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  dietry_preference?: Prisma.NullableEnumDietryPreferenceFieldUpdateOperationsInput | $Enums.DietryPreference | null
   providerId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -983,6 +1029,7 @@ export type MealUncheckedUpdateManyWithoutCategoryInput = {
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  dietry_preference?: Prisma.NullableEnumDietryPreferenceFieldUpdateOperationsInput | $Enums.DietryPreference | null
   providerId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1035,6 +1082,7 @@ export type MealSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   price?: boolean
   imageUrl?: boolean
   isAvailable?: boolean
+  dietry_preference?: boolean
   providerId?: boolean
   categoryId?: boolean
   createdAt?: boolean
@@ -1053,6 +1101,7 @@ export type MealSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   price?: boolean
   imageUrl?: boolean
   isAvailable?: boolean
+  dietry_preference?: boolean
   providerId?: boolean
   categoryId?: boolean
   createdAt?: boolean
@@ -1068,6 +1117,7 @@ export type MealSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   price?: boolean
   imageUrl?: boolean
   isAvailable?: boolean
+  dietry_preference?: boolean
   providerId?: boolean
   categoryId?: boolean
   createdAt?: boolean
@@ -1083,13 +1133,14 @@ export type MealSelectScalar = {
   price?: boolean
   imageUrl?: boolean
   isAvailable?: boolean
+  dietry_preference?: boolean
   providerId?: boolean
   categoryId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type MealOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "description" | "price" | "imageUrl" | "isAvailable" | "providerId" | "categoryId" | "createdAt" | "updatedAt", ExtArgs["result"]["meal"]>
+export type MealOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "description" | "price" | "imageUrl" | "isAvailable" | "dietry_preference" | "providerId" | "categoryId" | "createdAt" | "updatedAt", ExtArgs["result"]["meal"]>
 export type MealInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   provider?: boolean | Prisma.ProviderProfileDefaultArgs<ExtArgs>
   category?: boolean | Prisma.CategoryDefaultArgs<ExtArgs>
@@ -1121,6 +1172,7 @@ export type $MealPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     price: runtime.Decimal
     imageUrl: string | null
     isAvailable: boolean
+    dietry_preference: $Enums.DietryPreference | null
     providerId: string
     categoryId: string
     createdAt: Date
@@ -1558,6 +1610,7 @@ export interface MealFieldRefs {
   readonly price: Prisma.FieldRef<"Meal", 'Decimal'>
   readonly imageUrl: Prisma.FieldRef<"Meal", 'String'>
   readonly isAvailable: Prisma.FieldRef<"Meal", 'Boolean'>
+  readonly dietry_preference: Prisma.FieldRef<"Meal", 'DietryPreference'>
   readonly providerId: Prisma.FieldRef<"Meal", 'String'>
   readonly categoryId: Prisma.FieldRef<"Meal", 'String'>
   readonly createdAt: Prisma.FieldRef<"Meal", 'DateTime'>

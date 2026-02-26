@@ -27,11 +27,23 @@ export type Status = (typeof Status)[keyof typeof Status]
 
 
 export const OrderStatus = {
-  PENDING: 'PENDING',
-  CONFIRMED: 'CONFIRMED',
   PREPARING: 'PREPARING',
+  READY: 'READY',
   DELIVERED: 'DELIVERED',
   CANCELLED: 'CANCELLED'
 } as const
 
 export type OrderStatus = (typeof OrderStatus)[keyof typeof OrderStatus]
+
+
+export const DietryPreference = {
+  VEGAN: 'VEGAN',
+  VEGETARIAN: 'VEGETARIAN',
+  KETO: 'KETO',
+  GLUTENFREE: 'GLUTENFREE',
+  DIARYFREE: 'DIARYFREE',
+  HALAL: 'HALAL',
+  KOSHER: 'KOSHER'
+} as const
+
+export type DietryPreference = (typeof DietryPreference)[keyof typeof DietryPreference]
